@@ -1,0 +1,117 @@
+---
+import logo from "../images/logo.svg";
+import toggler from "../images/logo.svg";
+import Button from "./Button.astro";
+---
+
+<header class="container">
+  <nav>
+    <div class="logo">
+      <img src={logo} alt="" />
+    </div>
+    <ul>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Product</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Community</a></li>
+    </ul>
+    <div class="desktop">
+      <Button />
+    </div>
+
+    <div class="toggler mobile"></div>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: center;
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .logo {
+    width: 7rem;
+  }
+
+  nav .logo img {
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--DarkBlue);
+  }
+
+  nav ul li a:hover {
+    color: var(--DarkGrayishBlue);
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      position: absolute;
+      top: -100vh;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      margin: 0 auto;
+      background-color: white;
+      padding: 15px 20px;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    nav ul li {
+      margin-top: 2rem;
+    }
+  }
+
+  nav .toggler {
+    width: 2rem;
+    height: 1.34rem;
+    background-image: url("/images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  nav .toggler.active {
+    background-image: url("/images/icon-close.svg");
+  }
+
+  nav ul.active {
+    top: 5rem;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+</style>

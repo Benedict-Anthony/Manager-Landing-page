@@ -1,0 +1,78 @@
+---
+import intro from "../images/illustration.svg";
+import Button from "./Button.astro";
+---
+
+<section class="container grid flex section">
+  <div class="showcase-info">
+    <h2>
+      Bring everyone <br /> together to <br /> build better products.
+    </h2>
+    <p>
+      Manage makes it simple for software teams to plan day-to-day tasks while
+      keeping the larger team goals in view
+    </p>
+    <Button />
+  </div>
+
+  <div class="showcase-img">
+    <img src={intro} alt="" />
+  </div>
+</section>
+
+<style>
+  .showcase-info {
+    flex: 1;
+    width: 100%;
+  }
+
+  .showcase-info h2 {
+    font-size: 40px;
+    color: var(--VeryDarkBlue);
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .showcase-info p {
+    font-size: 18px;
+    color: var(--DarkBlue);
+    padding: 1rem 0;
+    line-height: 1.6em;
+    width: 400px;
+  }
+
+  .showcase-img {
+    flex: 1;
+  }
+
+  .showcase-img img {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .grid.flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+    }
+    .showcase-info {
+      text-align: center;
+    }
+    .showcase-info h2 {
+      font-size: 30px;
+      color: var(--VeryDarkBlue);
+      text-align: center;
+    }
+
+    .showcase-info p {
+      font-size: 18px;
+      color: var(--DarkBlue);
+      padding: 1rem 0;
+      line-height: 1.6em;
+      width: 100%;
+    }
+  }
+</style>

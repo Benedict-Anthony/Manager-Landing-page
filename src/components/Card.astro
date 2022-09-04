@@ -1,0 +1,59 @@
+---
+const { data } = Astro.props;
+---
+
+<article>
+  <h4>{data.id}</h4>
+  <div>
+    <h2>{data.title}</h2>
+    <p>{data.body}</p>
+  </div>
+</article>
+<style>
+  h2 {
+    font-size: 18px;
+  }
+
+  article {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    column-gap: 2rem;
+  }
+
+  article h4 {
+    background-color: var(--BrightRed);
+    color: var(--VaryLightGray);
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+
+  article h2 {
+    color: var(--DarkBlue);
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    article {
+      gap: 3px;
+    }
+    article h2,
+    article h4 {
+      font-size: 16px;
+    }
+    /* article h4 {
+      width: 130px;
+    } */
+    article h2 {
+      font-size: 16px;
+      background-color: var(--VeryPaleRed);
+      padding: 7px;
+      border-radius: 10px;
+    }
+
+    article p {
+      text-align: left;
+    }
+  }
+</style>

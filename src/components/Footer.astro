@@ -1,0 +1,204 @@
+---
+import Button from "./Button.astro";
+import logo from "../images/logo.svg";
+import facebook from "../images/icon-facebook.svg";
+import instagram from "../images/icon-instagram.svg";
+import pinterest from "../images/icon-pinterest.svg";
+import twitter from "../images/icon-twitter.svg";
+import youtube from "../images/icon-youtube.svg";
+---
+
+<footer>
+  <section class="newsletter">
+    <div class="container">
+      <h3>Simplify how your team <br /> works today</h3>
+      <button>
+        <a href="">Get started</a>
+      </button>
+    </div>
+  </section>
+
+  <section class="footer-dark">
+    <div class="container">
+      <ul class="between">
+        <li><img src={logo} alt="" /></li>
+        <li>
+          <img src={facebook} alt="" />
+          <img src={youtube} alt="" />
+          <img src={twitter} alt="" />
+          <img src={pinterest} alt="" />
+          <img src={instagram} alt="" />
+        </li>
+      </ul>
+
+      <div class="links grid">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <ul class="between">
+        <li>
+          <form action="">
+            <input type="text" placeholder="Updates in your inbox.." />
+            <Button text="Go" />
+          </form>
+        </li>
+
+        <p class="desktop">Copyright 2020. All Rights Reserved</p>
+      </ul>
+    </div>
+    <p class="mobile">Copyright 2020. All Rights Reserved</p>
+  </section>
+</footer>
+
+<style>
+  footer {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .newsletter {
+    width: 100%;
+    background-color: var(--BrightRed);
+    padding: 3rem 0;
+    background-image: url("images/desktop.svg");
+  }
+
+  .newsletter .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .newsletter h3 {
+    font-size: 40px;
+    color: var(--VaryLightGray);
+  }
+
+  .footer-dark {
+    padding: 3rem 0;
+    background-color: var(--VeryDarkBlue);
+  }
+
+  footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer .container ul li {
+    margin-top: 10px;
+  }
+  footer .container ul li a,
+  p {
+    color: var(--VaryLightGray);
+    font-size: 16px;
+  }
+
+  form {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+  }
+
+  form input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+  }
+  .between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 10rem;
+    text-align: left;
+  }
+  .between li img {
+    margin: 0 4px;
+  }
+  button {
+    border: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+    color: var(--VaryLightGray);
+    font-size: 16px;
+    background-color: var(--VaryLightGray);
+    border-radius: 35px;
+  }
+
+  button a {
+    color: var(--BrightRed);
+  }
+
+  button:hover,
+  button:focus {
+    outline: none;
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+
+  :root {
+    --BrightRed: hsl(12, 88%, 59%);
+    --DarkBlue: hsl(228, 39%, 23%);
+
+    /* ### Neutral */
+
+    --DarkGrayishBlue: hsl(227, 12%, 61%);
+    --VeryDarkBlue: hsl(233, 12%, 13%);
+    --VeryPaleRed: hsl(13, 100%, 96%);
+    --VaryLightGray: hsl(0, 0%, 98%);
+  }
+
+  .links.grid {
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    footer .container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 25px;
+      padding-bottom: 10px;
+    }
+
+    .footer-dark .container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      row-gap: 2rem;
+    }
+
+    .between {
+      height: auto;
+      flex-direction: column-reverse;
+      row-gap: 3rem;
+    }
+    .links.grid {
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 30px;
+      gap: 0;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+</style>

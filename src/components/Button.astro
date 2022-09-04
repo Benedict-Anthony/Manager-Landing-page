@@ -1,0 +1,33 @@
+---
+export interface Props {
+  text?: string;
+}
+const { text = "Get started" } = Astro.props as Props;
+---
+
+<button>
+  <a href="#">{text}</a>
+</button>
+<style>
+  button {
+    border: 0;
+    outline: 0;
+    padding: 1rem 2rem;
+    color: var(--VaryLightGray);
+    font-size: 16px;
+    background-color: var(--BrightRed);
+    border-radius: 35px;
+  }
+
+  button a {
+    color: var(--VaryLightGray);
+  }
+
+  button:hover,
+  button:focus {
+    outline: none;
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+</style>

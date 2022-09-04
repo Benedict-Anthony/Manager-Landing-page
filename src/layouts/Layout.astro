@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <title>Manager</title>
+
+    <style>
+      :root {
+        --BrightRed: hsl(12, 88%, 59%);
+        --DarkBlue: hsl(228, 39%, 23%);
+
+        /* ### Neutral */
+
+        --DarkGrayishBlue: hsl(227, 12%, 61%);
+        --VeryDarkBlue: hsl(233, 12%, 13%);
+        --VeryPaleRed: hsl(13, 100%, 96%);
+        --VaryLightGray: hsl(0, 0%, 98%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <slot />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"
+    ></script>
+    <script src="../scripts/script.js"></script>
+  </body>
+</html>
